@@ -39,19 +39,22 @@ def generate_intruder():
         ["Unauthorized presence detected in two two eight Wembley Square.", "Dispatching alert to Master."], "intruder")
 
 
-
 def generate_greeting(name):
     generate_mp3(["Welcome home " + name], "welcome_" + name)
+
 
 def play_greeting(name):
     generate_greeting(name)
     print("Playing greeting")
-    playsound('welcome_'+name+'.mp3')
+    # playsound('welcome_'+name+'.mp3')
+    subprocess.call("mplayer " + 'welcome_' + name + '.mp3', shell=True)
+
 
 def play_intruder():
     generate_intruder()
     print("Playing intruder alert")
-    playsound('intruder.mp3')
+    # playsound('intruder.mp3')
+    subprocess.call("mplayer intruder.mp3", shell=True)
 
 
 generate_intruder()
