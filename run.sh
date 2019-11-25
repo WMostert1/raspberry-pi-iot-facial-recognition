@@ -1,0 +1,1 @@
+python facial-recognition.py -m subscribe -r /home/pi/Development/certs/SFSRootCAG2.pem -c /home/pi/Development/certs/06162c896c-certificate.pem.crt -k /home/pi/Development/certs/06162c896c-private.pem.key -e a3i25kov1y7hu8-ats.iot.eu-west-1.amazonaws.com -t raspberry/facial/subscriber
