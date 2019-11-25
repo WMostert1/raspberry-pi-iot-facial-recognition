@@ -45,10 +45,12 @@ def generate_greeting(name):
 
 def play_greeting(name):
     generate_greeting(name)
+    print("Playing greeting")
     playsound('welcome_'+name+'.mp3')
 
 def play_intruder():
     generate_intruder()
+    print("Playing intruder alert")
     playsound('intruder.mp3')
 
 
