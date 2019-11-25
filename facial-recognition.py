@@ -19,6 +19,7 @@ from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 import logging
 import time
 import argparse
+import polly
 import json
 
 AllowedActions = ['both', 'publish', 'subscribe']
@@ -27,11 +28,15 @@ AllowedActions = ['both', 'publish', 'subscribe']
 # Custom MQTT message callback
 def customCallback(client, userdata, message):
     print("Received a new message: ")
-    print(message.payload)
-    print("from topic: ")
-    print(message.topic)
-    print("--------------\n\n")
 
+    payload = message.payload
+    print(payload)
+
+    for face in payload:
+        if face.name == "Unknown":
+            polly.play_intruder()
+        else:
+            polly.play_greeting(face.name)
 
 # Read in command-line parameters
 parser = argparse.ArgumentParser()
