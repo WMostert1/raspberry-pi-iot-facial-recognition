@@ -33,10 +33,10 @@ def customCallback(client, userdata, message):
     print(payload)
 
     for face in payload:
-        if face.name == "Unknown":
+        if face["name"] == "Unknown":
             polly.play_intruder()
         else:
-            polly.play_greeting(face.name)
+            polly.play_greeting(face["name"])
 
 # Read in command-line parameters
 parser = argparse.ArgumentParser()

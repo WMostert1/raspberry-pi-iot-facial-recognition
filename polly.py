@@ -52,4 +52,5 @@ def play_intruder():
     playsound('intruder.mp3')
 
 
-play_intruder()
+generate_intruder()
+generate_greeting("Master")
