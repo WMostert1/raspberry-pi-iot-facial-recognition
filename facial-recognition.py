@@ -29,7 +29,7 @@ AllowedActions = ['both', 'publish', 'subscribe']
 def customCallback(client, userdata, message):
     print("Received a new message: ")
 
-    payload = message.payload
+    payload = json.loads(message.payload)
     print(payload)
 
     for face in payload:
